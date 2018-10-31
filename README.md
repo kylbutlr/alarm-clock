@@ -1,2 +1,2 @@
-# alarm-clock
+# Alarm Clock
 Alarm Clock (very basic)
