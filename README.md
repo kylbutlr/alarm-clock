@@ -1,2 +1,2 @@
-# Alarm Clock
-Alarm Clock (very basic)
+# Countdown Timer
+Countdown Timer (very basic)
