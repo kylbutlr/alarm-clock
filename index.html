@@ -50,8 +50,7 @@
                     <button data-time="1" class="preset button">+ 60 sec</button>
                     <button data-time="5" class="preset button">+ 5 min</button>
                     <button data-time="15" class="preset button">+ 15 min</button>
-                    <button data-time="30" class="preset button">+ 60 min</button>
-                    <button data-time="60" class="preset button">+ 4 hours</button>
+                    <button data-time="30" class="preset button">+ 1 hour</button>
                     <button data-time="@6" class="preset button">@ 6:00 am</button>
                     <button data-time="@12" class="preset button">@ 12:00 pm</button>
                     <button data-time="@16" class="preset button">@ 4:00 pm</button>
@@ -207,9 +206,6 @@
             }
             
             function dateDiff(now, end) {
-                console.log(now);
-                console.log(end);
-                console.log(end-now);
                 if ((end-now) < 0) {
                     const addDate = now.getDate()+1;
                     end.setDate(addDate);
