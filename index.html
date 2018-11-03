@@ -1,7 +1,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
-        <title>Countdown Timer</title>
+        <title>Timer / Alarm</title>
     </head>
     <body>
         <style>
@@ -12,7 +12,7 @@
             <div class="container-div">
                 <div class="form-div">
                     <form class="form">
-                        <input type="text" class="input" autocomplete="off" required>
+                        <input type="text" class="input" placeholder="" autocomplete="off" required>
                         <button type="submit" class="button submit">Start Timer</button>
                     </form>
                 </div>
@@ -36,8 +36,7 @@
                 const now = Date.now();
                 const then = now + sec * 1000;
                 dispTimeLeft(sec);
-                dispEndTime(then);
-                
+                dispEndTime(then, "Timer");
                 countdown = setInterval(() => {
                     const secLeft = Math.round((then - Date.now()) / 1000);
                     if(secLeft < 0) {
@@ -54,11 +53,46 @@
                 }, 1000);
             }
 
+            function alarm(min) {
+                clearInterval(countdown);
+                const now = new Date();
+                const then = new Date(now.getTime() + min * 60000);
+                //console.log(then);
+                dispAlarm(min);
+                dispEndTime(then, "Alarm");
+                countdown = setInterval(() => {
+                    const secLeft = Math.round((then - Date.now()) / 1000);
+                    if(secLeft < 0) {
+                        clearInterval(countdown);
+                        const alarm = new Audio('springboard.mp3');
+                        alarm.play();
+                        $end.textContent = "Alarm Time has been reached";
+                        setTimeout(function () {
+                            alert("Alarm Time has been reached");
+                        }, 1000);
+                        return;
+                    }
+                    dispAlarm(secLeft);
+                    //console.log(secLeft);
+                }, 1000);
+            }
+
+            function dispAlarm(sec) {
+                const min = Math.floor(sec / 60);
+                let rSec = sec % 60;
+                if (rSec < 10) { 
+                    rSec = "0"+rSec;
+                }
+                const disp = min+":"+rSec;
+                document.title = "Alarm: "+disp;
+                $display.textContent = disp;
+            }
+
+
             function dispTimeLeft(sec) {
                 const min = Math.floor(sec / 60);
                 let rSec = sec % 60;
                 if (rSec < 10) { 
-                    rSec = parseInt(rSec);
                     rSec = "0"+rSec;
                 }
                 const disp = min+":"+rSec;
@@ -66,42 +100,119 @@
                 $display.textContent = disp;
             }
 
-            function dispEndTime(end) {
+            function dispEndTime(end, name) {
                 const endD = new Date(end);
                 let hr = endD.getHours();
-                if (hr > 12) {
+                let AmPm = "am"; 
+                if (hr === 24) {
+                    hr -=12;
+                    AmPm = "am";
+                }
+                else if (hr >= 12) {
                     hr -= 12;
+                    AmPm = "pm";
                 }
                 let min = endD.getMinutes();
                 if (min < 10) {
                     min = parseInt(min); 
                     min = "0"+min;
                 }
-                $end.textContent = "Timer Ends at "+hr+":"+min;
+                $end.textContent = name+" Ends at "+hr+":"+min+" "+AmPm;
             }
             
+            function dateDiff(now, end) {
+                if ((end-now) < 0) {
+                    const addDate = now.getDate()+1;
+                    end.setDate(addDate);
+                }
+                let diff = (end - now)/1000;
+                diff = Math.abs(Math.floor(diff));
+                const dys = Math.floor(diff/(24*60*60));
+                let scs = diff - dys * 24*60*60;
+                const hrs = Math.floor(scs/(60*60));
+                scs = scs - hrs * 60*60;
+                const mns = Math.floor(scs/(60));
+                scs = scs - mns * 60;
+                return (hrs*60)+mns+(scs/60);
+            }
+
             const prepTimer = (e) => {
                 e.preventDefault();
                 const input = $input.value;
                 let mins;
-                if (input.indexOf("@") >= 0) {
-                    
+                if (input.indexOf("@") == 0) {
+                    let is12 = false;
+                    let addHr = 0;
+                    let hour;
+                    let min;
+                    if (input.charAt(1) == "1" && input.charAt(2) == "2") {
+                        is12 = true;
+                        console.log("hi");
+                    }
+                    if (input.charAt(1) == " ") {
+                        if (input.charAt(2) == "1" && input.charAt(3) == "2") {
+                            is12 = true;
+                            console.log("space");
+                        }
+                    }
+                    if (input.indexOf("M") >= 0) {
+                        const t = input.indexOf("M");
+                        const AmPm = input.substring(t-1, t+1);
+                        if (AmPm === "PM") {
+                            if (is12 == false) {
+                                addHr += 12;
+                            }
+                        }
+                    }
+                    if (input.indexOf("m") >= 0) {
+                        const t = input.indexOf("m");
+                        const AmPm = input.substring(t-1, t+1);
+                        if (AmPm === "pm") {
+                            if (is12 == false) {
+                                addHr += 12;
+                            }
+                        }
+                    }
+                    if (input.indexOf(":") >= 0) {
+                        const t = input.indexOf(":");
+                        const hr = input.substring(1,t);
+                        const mn = input.substring(t+1,t+3);
+                        hour = parseInt(hr);
+                        hour += addHr;
+                        min = parseInt(mn);
+                    }
+                    else {
+                        console.log("else");
+                    }
+                    const now = new Date();
+                    const year = now.getFullYear();
+                    const month = now.getMonth();
+                    let date = now.getDate();
+                    let end = new Date(year, month, date, hour, min);
+                    mins = dateDiff(now, end);
+                    alarm(mins);
                 }
-                if (input.indexOf(":") >= 0) {
+                else if (input.indexOf(":") >= 0) {
                     const t = input.indexOf(":");
                     const mn = input.substring(0,t);
-                    const sc = input.substring(t+1);
+                    const sc = input.substring(t+1,t+3);
                     const min = parseInt(mn);
                     const sec = parseInt(sc);
                     mins = min + (sec/60);
+                    timer(mins * 60);
+                }
+                else if (!isNaN(input)) {
+                    mins = input;
+                    timer(mins * 60);
                 }
                 else {
-                    mins = input;
+                    alert("Error, invalid input. Please enter @ before a time (#:##) to set an"+
+                    "alarm or enter a time to set the countdown timer (#:## or # for minutes).");
+                    return false;
                 }
-                timer(mins * 60);
                 $input.value = "";
             }
-
+            $input.focus();
             $form.addEventListener("submit", prepTimer, false);
         </script>
     </body>
