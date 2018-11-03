@@ -1,2 +1,2 @@
-# Countdown Timer
-Countdown Timer (very basic)
+# Alarm & Timer
+Simple Alarm & Timer (Vanilla JS)
