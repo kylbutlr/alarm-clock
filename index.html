@@ -12,19 +12,21 @@
             <div class="container-div">
                 <div class="form-div">
                     <form class="form">
-                        <input type="number" class="input"  min="0.01" step="" autocomplete="off" required>
+                        <input type="text" class="input" autocomplete="off" required>
                         <button type="submit" class="button submit">Start Timer</button>
                     </form>
                 </div>
                 <div class="display-div">
-                    <h1 class="timeleft"></h1>
+                    <h1 class="time-left"></h1>
+                    <h2 class="end-time"></h2>
                 </div>
             </div>
 
 
         <script>
             let countdown;
-            const $display = document.querySelector(".timeleft");
+            const $display = document.querySelector(".time-left");
+            const $end = document.querySelector(".end-time");
             const $form = document.querySelector(".form");
             const $input = document.querySelector(".input");
             const $submit = document.querySelector(".submit");
@@ -34,6 +36,7 @@
                 const now = Date.now();
                 const then = now + sec * 1000;
                 dispTimeLeft(sec);
+                dispEndTime(then);
                 
                 countdown = setInterval(() => {
                     const secLeft = Math.round((then - Date.now()) / 1000);
@@ -41,7 +44,10 @@
                         clearInterval(countdown);
                         const alarm = new Audio('springboard.mp3');
                         alarm.play();
-                        alert("Timer has reached 0:00");
+                        $end.textContent = "Timer has reached 0:00";
+                        setTimeout(function () {
+                            alert("Timer has reached 0:00");
+                        }, 1000);
                         return;
                     }
                     dispTimeLeft(secLeft);
@@ -50,14 +56,48 @@
 
             function dispTimeLeft(sec) {
                 const min = Math.floor(sec / 60);
-                const rSec = sec % 60;
-                const disp = `${min}:${rSec < 10 ? "0" : "" }${rSec}`;
+                let rSec = sec % 60;
+                if (rSec < 10) { 
+                    rSec = parseInt(rSec);
+                    rSec = "0"+rSec;
+                }
+                const disp = min+":"+rSec;
+                document.title = "Timer: "+disp;
                 $display.textContent = disp;
+            }
+
+            function dispEndTime(end) {
+                const endD = new Date(end);
+                let hr = endD.getHours();
+                if (hr > 12) {
+                    hr -= 12;
+                }
+                let min = endD.getMinutes();
+                if (min < 10) {
+                    min = parseInt(min); 
+                    min = "0"+min;
+                }
+                $end.textContent = "Timer Ends at "+hr+":"+min;
             }
             
             const prepTimer = (e) => {
                 e.preventDefault();
-                const mins = $input.value;
+                const input = $input.value;
+                let mins;
+                if (input.indexOf("@") >= 0) {
+                    
+                }
+                if (input.indexOf(":") >= 0) {
+                    const t = input.indexOf(":");
+                    const mn = input.substring(0,t);
+                    const sc = input.substring(t+1);
+                    const min = parseInt(mn);
+                    const sec = parseInt(sc);
+                    mins = min + (sec/60);
+                }
+                else {
+                    mins = input;
+                }
                 timer(mins * 60);
                 $input.value = "";
             }
