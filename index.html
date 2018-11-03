@@ -1,13 +1,66 @@
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8"/>
-        <title>Alarm Clock</title>
+        <title>Countdown Timer</title>
     </head>
     <body>
         <style>
+
+
+
         </style>
-        <p>Alarm Clock</p>
+            <div class="container-div">
+                <div class="form-div">
+                    <form class="form">
+                        <input type="number" class="input"  min="0.01" step="" autocomplete="off" required>
+                        <button type="submit" class="button submit">Start Timer</button>
+                    </form>
+                </div>
+                <div class="display-div">
+                    <h1 class="timeleft"></h1>
+                </div>
+            </div>
+
+
         <script>
+            let countdown;
+            const $display = document.querySelector(".timeleft");
+            const $form = document.querySelector(".form");
+            const $input = document.querySelector(".input");
+            const $submit = document.querySelector(".submit");
+
+            function timer(sec) {
+                clearInterval(countdown);
+                const now = Date.now();
+                const then = now + sec * 1000;
+                dispTimeLeft(sec);
+                
+                countdown = setInterval(() => {
+                    const secLeft = Math.round((then - Date.now()) / 1000);
+                    if(secLeft < 0) {
+                        clearInterval(countdown);
+                        console.log("DONE");
+                        return;
+                    }
+                    dispTimeLeft(secLeft);
+                }, 1000);
+            }
+
+            function dispTimeLeft(sec) {
+                const min = Math.floor(sec / 60);
+                const rSec = sec % 60;
+                const disp = `${min}:${rSec < 10 ? "0" : "" }${rSec}`;
+                $display.textContent = disp;
+            }
+            
+            const prepTimer = (e) => {
+                e.preventDefault();
+                const mins = $input.value;
+                timer(mins * 60);
+                $input.value = "";
+            }
+
+            $form.addEventListener("submit", prepTimer, false);
         </script>
     </body>
 </html>
