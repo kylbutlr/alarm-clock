@@ -10,7 +10,7 @@
         <style>
             body,
             .container-div::before {
-                background: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-701708.jpg) 0 / cover fixed;
+                background: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-36320.jpg) 0 / cover fixed;
             }
             body {
                 background-color: #ececec;
@@ -38,17 +38,19 @@
             }
             .container-div::before {
                 content: '';
+                border-radius: 20px;
                 margin: 20vh 20vw;
                 position: absolute;
                 top: 0;
                 right: 0;
                 bottom: 0;
                 left: 0;
-                filter:blur(2.5px);
+                filter:blur(5px);
                 z-index: -1;
             }
             .container-div {
                 background-color: #00000055;
+                border-radius: 20px;
                 box-shadow: 2px 5px 10px -2px black;
                 display: flex;
                 flex-direction: row;
@@ -69,7 +71,8 @@
             .display-time {
                 align-items: center;
                 background-color: #00000055;
-                box-shadow: 1px 2px 5px -1px black;
+                border-radius: 10px;
+                box-shadow: inset 0 3px 10px -3px black;
                 display: flex;
                 flex: 3;
                 margin: 0 0 2.5vh 0;
@@ -79,7 +82,8 @@
             .display-other {
                 align-items: center;
                 background-color: #00000055;
-                box-shadow: 1px 2px 5px -1px black;
+                border-radius: 10px;
+                box-shadow: inset 0 3px 10px -3px black;
                 display: flex;
                 flex: 2;
                 flex-direction: column;
@@ -124,13 +128,19 @@
                 margin: 0;
             }
             .input {
+                border-radius: 10px 10px 0 0;
+                box-shadow: inset 0 3px 10px -3px black;
                 flex: 1;
                 padding: 0 10px;
                 text-align: center;
             }
+            .submit {
+                border-radius: 0 0 10px 10px;
+            }
             .button {
-                flex: 1;
+                background-image: linear-gradient(to bottom, #ffffff, #c9c9c9);
                 box-shadow: 1px 2px 5px -1px black;
+                flex: 1;
             }
         </style>
         <div class="container-div">
@@ -143,16 +153,16 @@
                 </div>
                 <div class="button-div">
                     <div class="timer-presets">
-                        <button data-time="1" class="preset button">+ 60 sec</button>
-                        <button data-time="5" class="preset button">+ 5 min</button>
-                        <button data-time="15" class="preset button">+ 15 min</button>
-                        <button data-time="60" class="preset button">+ 1 hour</button>
+                        <button style="border-radius: 10px 0 0 0" data-time="1" class="preset button">+ 60 sec</button>
+                        <button style="border-radius: 0 10px 0 0" data-time="5" class="preset button">+ 5 min</button>
+                        <button style="border-radius: 0 0 0 10px" data-time="15" class="preset button">+ 15 min</button>
+                        <button style="border-radius: 0 0 10px 0" data-time="60" class="preset button">+ 1 hour</button>
                     </div>
                     <div class="alarm-presets">
-                        <button data-time="@6" class="preset button">@ 6:00 am</button>
-                        <button data-time="@12" class="preset button">@ 12:00 pm</button>
-                        <button data-time="@16" class="preset button">@ 4:00 pm</button>
-                        <button data-time="@22" class="preset button">@ 10:00 pm</button>
+                        <button style="border-radius: 10px 0 0 0" data-time="@6" class="preset button">@ 6:00 am</button>
+                        <button style="border-radius: 0 10px 0 0" data-time="@12" class="preset button">@ 12:00 pm</button>
+                        <button style="border-radius: 0 0 0 10px" data-time="@16" class="preset button">@ 4:00 pm</button>
+                        <button style="border-radius: 0 0 10px 0" data-time="@22" class="preset button">@ 10:00 pm</button>
                     </div>
                 </div>
             </div>
