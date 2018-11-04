@@ -5,67 +5,170 @@
     </head>
     <body>
         <style>
-            .container-div {
-                display: flex;
-                height: auto;
-                margin: auto;
-                width: 80vw;
+            @import url('https://fonts.googleapis.com/css?family=Work+Sans');
+        </style>
+        <style>
+            html {
+                background-color: #222222;
+                background: url(https://farm3.staticflickr.com/2891/33833709921_bec1f88a9b_k.jpg) 0 / cover fixed;
+                font-family: 'Work Sans','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                color: #ececec;
+                text-shadow: 1px 2px 5px black;
             }
-            .display-div {
-                margin: auto;
+            h1 {
+                font-size: 128px;
+                font-weight: normal;
+                margin: 0;
+                padding: 0;
+            }
+            h2 {
+                font-size: 64px;
+                font-weight: normal;
+                margin: 0;
+                padding: 0;
+            }
+            h3 {
+                font-size: 32px;
+                font-weight: normal;
+                margin: 0;
+                padding: 0;
+            }
+            .container-div::before {
+                background: url(https://farm3.staticflickr.com/2891/33833709921_bec1f88a9b_k.jpg) 0 / cover fixed;
+                content: '';
+                margin: 20vh 20vw;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                filter:blur(2.5px);
+                z-index: -1;
+            }
+            .container-div {
+                background-color: #00000055;
+                box-shadow: 2px 5px 10px -2px black;
+                display: flex;
+                flex-direction: row;
+                height: 60vh;
+                justify-content: center;
+                margin: 20vh auto;
                 width: 60vw;
             }
-            .control-div {
+            .display-div {
                 align-items: center;
                 display: flex;
                 flex-direction: column;
-                margin: auto;
-                justify-content: stretch;
-                width: 20vw;
+                justify-content: center;
+                margin: 2.5vh 2.5vh 2.5vh 0;
+                text-align: center;
+                width: 100%;
+            }
+            .display-time {
+                align-items: center;
+                background-color: #00000055;
+                box-shadow: 1px 2px 5px -1px black;
+                display: flex;
+                flex: 3;
+                margin: 0 0 2.5vh 0;
+                justify-content: center;
+                width: 100%;
+            }
+            .display-other {
+                align-items: center;
+                background-color: #00000055;
+                box-shadow: 1px 2px 5px -1px black;
+                display: flex;
+                flex: 2;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+            }
+            .control-div {
+                display: flex;
+                flex-direction: column;
+                padding: 2.5vh;  
+                width: 10vw;    
             }
             .form-div {
-                flex-grow: 1;
-                width: 100%;
+                display: flex;
+                flex: 30%;
+                flex-direction: column;
             }
             .button-div {
-                flex-grow: 1;
-                width: 100%;
+                display: flex;
+                flex: 70%;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            .timer-presets {
+                display: grid;
+                flex: 1;
+                flex-direction: column;
+                grid-template-columns: repeat(auto-fill,minmax(5vw, 1fr));
+                padding: 2.5vh 0 0 0;
+            }
+            .alarm-presets {
+                display: grid;
+                flex: 1;
+                flex-direction: column;
+                grid-template-columns: repeat(auto-fill,minmax(5vw, 1fr));
+                padding: 2.5vh 0 0 0;
+            }
+            .form {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                margin: 0;
             }
             .input {
-                width: 100%
+                flex: 1;
+                padding: 0 10px;
+                text-align: center;
             }
             .button {
-                width: 100%;
+                flex: 1;
+                box-shadow: 1px 2px 5px -1px black;
             }
         </style>
         <div class="container-div">
             <div class="control-div">
                 <div class="form-div">
                     <form class="form">
-                        <input type="text" class="input" placeholder="Minutes for Timer or @Time for Alarm" autocomplete="off" required>
+                        <input type="textarea" class="input" placeholder="Minutes or @Time" autocomplete="off" required>
                         <button type="submit" class="submit button">Start</button>
                     </form>
                 </div>
                 <div class="button-div">
-                    <button data-time="1" class="preset button">+ 60 sec</button>
-                    <button data-time="5" class="preset button">+ 5 min</button>
-                    <button data-time="15" class="preset button">+ 15 min</button>
-                    <button data-time="30" class="preset button">+ 1 hour</button>
-                    <button data-time="@6" class="preset button">@ 6:00 am</button>
-                    <button data-time="@12" class="preset button">@ 12:00 pm</button>
-                    <button data-time="@16" class="preset button">@ 4:00 pm</button>
-                    <button data-time="@22" class="preset button">@ 10:00 pm</button>
+                    <div class="timer-presets">
+                        <button data-time="1" class="preset button">+ 60 sec</button>
+                        <button data-time="5" class="preset button">+ 5 min</button>
+                        <button data-time="15" class="preset button">+ 15 min</button>
+                        <button data-time="60" class="preset button">+ 1 hour</button>
+                    </div>
+                    <div class="alarm-presets">
+                        <button data-time="@6" class="preset button">@ 6:00 am</button>
+                        <button data-time="@12" class="preset button">@ 12:00 pm</button>
+                        <button data-time="@16" class="preset button">@ 4:00 pm</button>
+                        <button data-time="@22" class="preset button">@ 10:00 pm</button>
+                    </div>
                 </div>
             </div>
             <div class="display-div">
-                <h1 class="time-left"></h1>
-                <h2 class="end-time"></h2>
+                <div class="display-time">
+                    <h1 class="time-left"></h1>
+                </div>
+                <div class="display-other">
+                    <h3 class="other-text"></h3>
+                    <h2 class="end-time"></h2>
+                </div>
             </div>
         </div>
         <script>
             let countdown;
             const $display = document.querySelector(".time-left");
             const $end = document.querySelector(".end-time");
+            const $other = document.querySelector(".other-text");
             const $form = document.querySelector(".form");
             const $input = document.querySelector(".input");
             const $submit = document.querySelector(".submit");
@@ -83,7 +186,7 @@
                         clearInterval(countdown);
                         const alarm = new Audio('springboard.mp3');
                         alarm.play();
-                        $end.textContent = "Timer has reached 0:00";
+                        $other.textContent = "Timer has reached 0:00 at:";
                         setTimeout(function () {
                             alert("Timer has reached 0:00");
                         }, 1000);
@@ -106,7 +209,7 @@
                         clearInterval(countdown);
                         const alarm = new Audio('springboard.mp3');
                         alarm.play();
-                        $end.textContent = "Alarm Time has been reached";
+                        $other.textContent = "Alarm Time has been reached at:";
                         setTimeout(function () {
                             alert("Alarm Time has been reached");
                         }, 1000);
@@ -202,7 +305,8 @@
                 if (hr == 0) {
                     hr = 12;
                 }
-                $end.textContent = name+" ends at "+hr+":"+min+" "+AmPm;
+                $other.textContent = name+" ends at:"
+                $end.textContent = hr+":"+min+" "+AmPm;
             }
             
             function dateDiff(now, end) {
