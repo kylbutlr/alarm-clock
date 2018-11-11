@@ -1,26 +1,27 @@
 body,
-.container-div::before,
+.header::before,
+.container-glass,
 .mute-div::before {
     background: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-36320.jpg) 0 / cover fixed;
 }
 body {
     background-color: #ececec;
-    font-family: 'Arimo', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #ececec;
     text-shadow: 1px 2px 5px black;
 }
 h1 {
-    font-size: 10vw;
+    font-size: 15vw;
     font-weight: normal;
     letter-spacing: 2.5px;
     margin: 0;
     padding: 0;
 }
 h2 {
-    font-size: 5vw;
+    font-size: 7.5vw;
     font-weight: normal;
     letter-spacing: 2.5px;
-    margin: 0;
+    margin: -2vh 0 0;
     padding: 0;
 }
 h3 {
@@ -31,12 +32,45 @@ h3 {
     padding: 0;
     word-spacing: 2.5px;
 }
-.container-div::before {
+h4 {
+    font-family: Brush Script MT, Brush Script Std, Arial, Helvetica, sans-serif;
+    font-size: 5vh;
+    font-weight: normal;
+    text-shadow: 1px 2px 2.5px black;
+
+}
+.header::before {
+    display: block;
+    width: 92.5vw;
+    height: 5vh;
+    content: '';
+    border-radius: 10px;
+    margin: 2.5vh 2.5vw;
+    position: absolute;
+    left: 1.25vw;
+    top: 0;
+    filter:blur(5px);
+    z-index: -1;
+}
+.header {
+    background: #00000055;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px -1px black;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 5vh;
+    margin: 2.5vh 2.5vw;
+    text-align: center;
+}
+.container-glass {
     content: '';
     border-radius: 20px;
-    margin: 20vh 20vw;
+    margin: 0 10vw 20vh;
     position: absolute;
-    top: 0;
+    top: 10vh;
     right: 0;
     bottom: 0;
     left: 0;
@@ -49,10 +83,10 @@ h3 {
     box-shadow: 2px 5px 10px -2px black;
     display: flex;
     flex-direction: row;
-    height: 60vh;
+    height: 70vh;
     justify-content: center;
-    margin: 20vh auto;
-    width: 60vw;
+    margin: 0 auto;
+    width: 80vw;
 }
 .display-div {
     align-items: center;
