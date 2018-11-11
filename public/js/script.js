@@ -204,6 +204,13 @@ function buttonAdd() {
     $input.focus()
 }
 
+$("#input").keypress(function(event) {
+    if (event.which == 13) {
+        event.preventDefault();
+        $("#submit").click();
+    }
+});
+
 function checkRunning() {
     if (running === true) {
         $submit.textContent = "Stop"
