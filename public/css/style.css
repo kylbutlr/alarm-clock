@@ -9,26 +9,26 @@ body {
     text-shadow: 1px 2px 5px black;
 }
 h1 {
-    font-size: 128px;
+    font-size: 10vw;
     font-weight: normal;
     letter-spacing: 2.5px;
     margin: 0;
     padding: 0;
 }
 h2 {
-    font-size: 64px;
+    font-size: 5vw;
     font-weight: normal;
     letter-spacing: 2.5px;
     margin: 0;
     padding: 0;
 }
 h3 {
-    font-size: 32px;
+    font-size: 2.5vw;
     font-weight: normal;
-    letter-spacing: 5px;
+    letter-spacing: 2.5px;
     margin: 0;
     padding: 0;
-    word-spacing: 5px;
+    word-spacing: 2.5px;
 }
 .container-div::before {
     content: '';
@@ -115,12 +115,6 @@ h3 {
     flex-direction: column;
     grid-template-columns: repeat(auto-fill,minmax(5vw, 1fr));
     padding: 2.5vh 0 0 0;
-}
-.form {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    margin: 0;
 }
 .input {
     border-radius: 10px 10px 0 0;
