@@ -128,15 +128,22 @@ h3 {
     border-radius: 0 0 10px 10px;
 }
 .button {
-    background-image: linear-gradient(to bottom, #ffffff, #e0e0e0);
+    background-image: linear-gradient(to bottom, #ffffff, #d0d0d0);
     box-shadow: 1px 2px 5px -1px black;
     cursor: pointer;
     flex: 1;
     outline: none;
 }
 .button:hover {
-    background-image: linear-gradient(to bottom, #e0e0e0, #ffffff);
-
+    background-image: linear-gradient(to bottom, #d0d0d0, #ffffff);
+}
+.stop-button {
+    background-image: linear-gradient(to bottom, #444444, #222222);
+    color: #ffffff;
+}
+.stop-button:hover {
+    background-image: linear-gradient(to bottom, #222222, #444444);
+    color: #ffffff;
 }
 .hidden {
     opacity: 0;

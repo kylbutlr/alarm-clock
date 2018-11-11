@@ -19,6 +19,7 @@ function timer(sec) {
         if(secLeft < 0) {
             clearInterval(countdown)
             running = false
+            checkRunning()
             const alarm = new Audio('media/springboard.mp3')
             alarm.play()
             $other.textContent = "Timer has reached 0:00 at:"
@@ -44,6 +45,7 @@ function alarm(min) {
         if(secLeft < 0) {
             clearInterval(countdown)
             running = false
+            checkRunning()
             const alarm = new Audio('media/springboard.mp3')
             alarm.play()
             $other.textContent = "Alarm Time has been reached at:"
@@ -205,9 +207,11 @@ function buttonAdd() {
 function checkRunning() {
     if (running === true) {
         $submit.textContent = "Stop"
+        $submit.classList.add("stop-button")
         $("#submit").unbind('click').click(function() {
             clearInterval(countdown)
             running = false
+            document.title = "Alarm / Timer"
             $display.textContent = ""
             $end.textContent = ""
             $other.textContent = ""
@@ -216,6 +220,7 @@ function checkRunning() {
     }
     else {
         $submit.textContent = "Start"
+        $submit.classList.remove("stop-button")
         $("#submit").unbind('click').click(function() {
             prepClock()
         })
