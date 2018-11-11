@@ -1,11 +1,13 @@
 let countdown
 let running = false
+let mute = false
 const $display = document.querySelector(".time-left")
 const $end = document.querySelector(".end-time")
 const $other = document.querySelector(".other-text")
 const $input = document.querySelector(".input")
 const $submit = document.querySelector(".submit")
 const $buttons = document.querySelectorAll('[data-time]')
+const $mute = document.getElementById("mute")
 
 function timer(sec) {
     const now = Date.now()
@@ -20,8 +22,10 @@ function timer(sec) {
             clearInterval(countdown)
             running = false
             checkRunning()
-            const alarm = new Audio('media/springboard.mp3')
-            alarm.play()
+            if (mute === false) {
+                const alarm = new Audio('media/springboard.mp3')
+                alarm.play()
+            }
             $other.textContent = "Timer has reached 0:00 at:"
             setTimeout(function () {
                 alert("Timer has reached 0:00")
@@ -46,8 +50,10 @@ function alarm(min) {
             clearInterval(countdown)
             running = false
             checkRunning()
-            const alarm = new Audio('media/springboard.mp3')
-            alarm.play()
+            if (mute === false) {
+                const alarm = new Audio('media/springboard.mp3')
+                alarm.play()
+            }
             $other.textContent = "Alarm Time has been reached at:"
             setTimeout(function () {
                 alert("Alarm Time has been reached")
@@ -231,6 +237,19 @@ function checkRunning() {
         $("#submit").unbind('click').click(function() {
             prepClock()
         })
+    }
+}
+
+function onMuteClick(e) {
+    if (mute === true) {
+        mute = false
+        $mute.classList.remove("mute-icon")
+        $mute.classList.add("unmute-icon")
+    }
+    else {
+        mute = true
+        $mute.classList.remove("unmute-icon")
+        $mute.classList.add("mute-icon")
     }
 }
 
@@ -475,4 +494,5 @@ const prepClock = (e) => {
 
 checkRunning()
 $input.focus()
+$mute.addEventListener('click', onMuteClick)
 $buttons.forEach(button => button.addEventListener('click', buttonAdd))

@@ -145,6 +145,49 @@ h3 {
     background-image: linear-gradient(to bottom, #222222, #444444);
     color: #ffffff;
 }
+.mute-div::before {
+    content: '';
+    border-radius: 10px;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter:blur(5px);
+    z-index: -1;
+}
+.mute-div {
+    position: absolute;
+    right: 1vw;
+    bottom: 1vh;
+    background-color: #00000055;
+    border-radius: 15px;
+    box-shadow: 2px 5px 10px -2px black;
+    height: 12vh;
+    margin: 1vh 1vw;
+    padding: 1vh 1vw;
+    width: 5vw;
+}
+.mute {
+    border-radius: 10px;
+    margin: 1vh 1vw 0 0;
+    height: 10.25vh;
+    width: 5vw;
+    box-shadow: 1px 2px 5px -1px black;
+    cursor: pointer;
+    outline: none;
+}
+.mute-icon {
+    background-image:url("images/Mute_Icon.png");
+    background-repeat: no-repeat;
+    background-size: 95%;
+}
+.unmute-icon {
+    background-image:url("images/Speaker_Icon.png");
+    background-repeat: no-repeat;
+    background-size: 95%;
+}
 .hidden {
     opacity: 0;
     transition: opacity 1s;
