@@ -192,7 +192,7 @@ h4 {
     margin: 88.75vh 0 0 92vw;
     position: absolute;
     top: 0;
-    right: -2.5vw;
+    right: 2.5vw;
     bottom: 0;
     left: 0;
     filter:blur(5px);
