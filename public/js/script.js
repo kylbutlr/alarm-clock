@@ -1,3 +1,6 @@
+/* jshint asi: true */
+/* jshint esversion: 6 */
+
 let countdown
 let running = false
 let mute = false
