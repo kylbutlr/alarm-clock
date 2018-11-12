@@ -1,13 +1,14 @@
 body,
 .header::before,
 .container-glass,
-.mute-div::before {
+.mute-glass {
     background: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-36320.jpg) 0 / cover fixed;
 }
 body {
     background-color: #ececec;
     font-family: 'Roboto', sans-serif;
     color: #ececec;
+    overflow: hidden;
     text-shadow: 1px 2px 5px black;
 }
 h1 {
@@ -180,28 +181,28 @@ h4 {
     background-image: linear-gradient(to bottom, #222222, #444444);
     color: #ffffff;
 }
-.mute-div::before {
-    display: block;
-    width: 100%;
-    height: 100%;
+.mute-glass {
     content: '';
-    border-radius: 10px;
-    margin: 0;
+    border-radius: 10px 10px 0 0;
+    margin: 92vh 0 0 93.5vw;
     position: absolute;
-    right: 0;
+    top: 0;
+    right: 2.5vw;
     bottom: 0;
+    left: 0;
     filter:blur(5px);
+    width: 4vw;
     z-index: -1;
 }
 .mute-div {
     position: absolute;
-    right: 1vw;
-    bottom: 1vh;
+    right: 2.5vw;
+    bottom: 0px;
     background-color: #00000055;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0;
     box-shadow: 2px 5px 10px -2px black;
     height: 10vh;
-    margin: 1vh 1vw;
+    margin: 0;
     padding: 0.75vh 0.75vw;
     width: 4vw;
 }

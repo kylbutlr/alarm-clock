@@ -505,6 +505,7 @@ $(function() {
     $(".alarm-presets").hide().delay(500).slideToggle(1000)
     $(".display-time").hide().delay(500).slideToggle(1000)
     $(".display-other").hide().delay(500).slideToggle(1000)
+    $(".mute-div").hide().delay(500).slideToggle(1000)
     $(".header").click(function(e) {
         $(".container-div").slideToggle(1000)
         $(".container-glass").slideToggle(1000)
@@ -513,5 +514,6 @@ $(function() {
         $(".alarm-presets").slideToggle(1000)
         $(".display-time").slideToggle(1000)
         $(".display-other").slideToggle(1000)
+        $(".mute-div").slideToggle(1000)
     })
 })
