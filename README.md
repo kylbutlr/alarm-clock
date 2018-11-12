@@ -1,2 +1,2 @@
 # Alarm & Timer
-Basic Dual Alarm & Timer
+Javscript Dual Alarm & Timer
