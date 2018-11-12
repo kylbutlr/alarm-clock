@@ -215,10 +215,6 @@ h4 {
     cursor: pointer;
     outline: none;
 }
-.mute:active {
-    background-size: 92.5%;
-    background-position: right 2px top 2px;
-}
 .mute-icon {
     background-image:url("images/Mute_Icon.png");
     background-position: center;
