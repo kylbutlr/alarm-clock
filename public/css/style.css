@@ -66,6 +66,10 @@ h4 {
     margin: 2.5vh 2.5vw;
     text-align: center;
 }
+.header:active {
+    box-shadow: inset 0px 5px 10px -2px black;
+    transform: scale(0.975);
+}
 .container-glass {
     content: '';
     border-radius: 20px;
@@ -185,14 +189,14 @@ h4 {
 .mute-glass {
     content: '';
     border-radius: 10px 10px 0 0;
-    margin: 92vh 0 0 93.5vw;
+    margin: 88.75vh 0 0 92vw;
     position: absolute;
     top: 0;
-    right: 2.5vw;
+    right: -2.5vw;
     bottom: 0;
     left: 0;
     filter:blur(5px);
-    width: 4vw;
+    width: 5.5vw;
     z-index: -1;
     opacity: 0.80;
 }
