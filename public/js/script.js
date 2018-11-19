@@ -1,6 +1,3 @@
-/* jshint asi: true */
-/* jshint esversion: 6 */
-
 let countdown
 let running = false
 let mute = false
@@ -503,13 +500,14 @@ $buttons.forEach(button => button.addEventListener('click', buttonAdd))
 $(function() {
     $(".container-div").hide().delay(500).slideToggle(1000)
     $(".container-glass").hide().delay(500).slideToggle(1000)
-    $(".form-div").hide().delay(500).slideToggle(1000)
-    $(".timer-presets").hide().delay(500).slideToggle(1000)
-    $(".alarm-presets").hide().delay(500).slideToggle(1000)
     $(".display-time").hide().delay(500).slideToggle(1000)
     $(".display-other").hide().delay(500).slideToggle(1000)
     $(".mute-div").hide().delay(500).slideToggle(1000)
     $(".mute-glass").hide().delay(1000).fadeToggle(500)
+    $(".form-div").hide().delay(500).slideToggle(1000)
+    $(".timer-presets").hide().delay(500).slideToggle(1000)
+    $(".alarm-presets").hide().delay(500).slideToggle(1000)
+    
     $(".header").click(function(e) {
         $(".container-div").slideToggle(1000)
         $(".container-glass").slideToggle(1000)
