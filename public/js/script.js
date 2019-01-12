@@ -484,7 +484,7 @@ const prepClock = (e) => {
         timer(mins * 60)
     }
     else {
-        alert("Error, invalid input. Please enter @ before a time (#:##) to set an"+
+        alert("Error, invalid input. Please enter @ before a time (#:##) to set an "+
         "alarm or enter a time to set the countdown timer (#:## or # for minutes).")
         $input.focus()
         return false
