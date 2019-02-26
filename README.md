@@ -1,2 +1,2 @@
 # Alarm & Timer
-### Vanilla Javscript Alarm & Timer
+### Javascript Alarm & Timer application
