@@ -4,9 +4,12 @@ body,
 .mute-glass {
     background: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-36320.jpg) 0 / cover fixed;
 }
+html, button, input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+}
 body {
     background-color: #ececec;
-    font-family: 'Roboto', sans-serif;
     color: #ececec;
     overflow: hidden;
     text-shadow: 1px 2px 5px black;
@@ -22,7 +25,7 @@ h2 {
     font-size: 7.5vw;
     font-weight: normal;
     letter-spacing: 2.5px;
-    margin: -2vh 0 0;
+    margin: 0;
     padding: 0;
 }
 h3 {
@@ -130,7 +133,7 @@ h4 {
     display: flex;
     flex-direction: column;
     padding: 2.5vh;  
-    width: 10vw;    
+    width: 15vw;    
 }
 .form-div {
     display: flex;
@@ -143,18 +146,12 @@ h4 {
     flex-direction: column;
     flex-wrap: wrap;
 }
-.timer-presets {
-    display: grid;
-    flex: 1;
-    flex-direction: column;
-    grid-template-columns: repeat(auto-fill,minmax(5vw, 1fr));
-    padding: 2.5vh 0 0 0;
-}
+.timer-presets,
 .alarm-presets {
     display: grid;
     flex: 1;
     flex-direction: column;
-    grid-template-columns: repeat(auto-fill,minmax(5vw, 1fr));
+    grid-template-columns: repeat(auto-fill,minmax(7.5vw, 1fr));
     padding: 2.5vh 0 0 0;
 }
 .input {
@@ -239,4 +236,31 @@ h4 {
 }
 .visible {
     opacity: 1;
+}
+
+@media only screen and (max-width: 767px) {
+  
+  html, button, input {
+    font-size: 80%;
+  }
+
+  .control-div {
+    width: 25vw;
+  }
+
+  .timer-presets,
+  .alarm-presets {
+    grid-template-columns: repeat(auto-fill,minmax(8.5vw, 1fr));
+  }
+
+  .mute-glass {
+    width: 9.5vw;
+  }
+
+  .mute,
+  .mute-div {
+    height: 8vh;
+    width: 8vw;
+  }
+
 }
