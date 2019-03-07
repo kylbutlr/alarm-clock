@@ -151,7 +151,7 @@ h4 {
     display: grid;
     flex: 1;
     flex-direction: column;
-    grid-template-columns: repeat(auto-fill,minmax(7.5vw, 1fr));
+    grid-template-columns: repeat(auto-fill,minmax(6.5vw, 1fr));
     padding: 2.5vh 0 0 0;
 }
 .input {
@@ -261,6 +261,15 @@ h4 {
   .mute-div {
     height: 8vh;
     width: 8vw;
+  }
+
+}
+
+@media only screen and (min-width: 1150px) {
+
+  .timer-presets,
+  .alarm-presets {
+    grid-template-columns: repeat(auto-fill,minmax(5vw, 1fr));
   }
 
 }
