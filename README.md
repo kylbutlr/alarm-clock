@@ -1,5 +1,4 @@
 # Alarm & Timer
-### Javascript Alarm & Timer application
 
 This is a basic Alarm & Timer application that handles either mode through the input.
 
