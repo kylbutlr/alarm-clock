@@ -2,8 +2,6 @@
 
 ### [Click here for a live preview](https://kylbutlr.github.io/alarm-timer/)
 
-## Description
-
 This is a basic Alarm & Timer application that handles either mode through the input.
 
 `X` (number) alone will set a **Timer** to end in the inputted minutes. So "4" sets a timer to end in 4 minutes. The input can also read seconds, so "4:44" sets a correct time for the timer as well.
