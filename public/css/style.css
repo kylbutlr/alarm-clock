@@ -2,7 +2,7 @@ body,
 .header::before,
 .container-glass,
 .mute-glass {
-    background: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-36320.jpg) 0 / cover fixed;
+    background: url('./images/background.jpg') 0 / cover fixed;
 }
 html, button, input {
   font-family: 'Roboto', sans-serif;
