@@ -1,250 +1,260 @@
+html,
 body,
 .header::before,
 .container-glass,
 .mute-glass {
-    background: url('./images/background.jpg') 0 / cover fixed;
+  background: url('./images/background.jpg') 0 / cover fixed;
 }
 html {
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
+  overflow: hidden;
 }
-html, button, input {
+html,
+button,
+input {
   font-family: 'Roboto', sans-serif;
   font-size: 0.9rem;
 }
 body {
-    background-color: #ececec;
-    color: #ececec;
-    overflow: hidden;
-    text-shadow: 1px 2px 5px black;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0 !important;
+  background-color: #ececec;
+  color: #ececec;
+  overflow: hidden;
+  text-shadow: 1px 2px 5px black;
 }
 h1 {
-    font-size: 15vw;
-    font-weight: normal;
-    letter-spacing: 2.5px;
-    margin: 0;
-    padding: 0;
+  font-size: 15vw;
+  font-weight: normal;
+  letter-spacing: 2.5px;
+  margin: 0;
+  padding: 0;
 }
 h2 {
-    font-size: 7.5vw;
-    font-weight: normal;
-    letter-spacing: 2.5px;
-    margin: 0;
-    padding: 0;
+  font-size: 7.5vw;
+  font-weight: normal;
+  letter-spacing: 2.5px;
+  margin: 0;
+  padding: 0;
 }
 h3 {
-    font-size: 2.5vw;
-    font-weight: normal;
-    letter-spacing: 2.5px;
-    margin: 0;
-    padding: 0;
-    word-spacing: 2.5px;
+  font-size: 2.5vw;
+  font-weight: normal;
+  letter-spacing: 2.5px;
+  margin: 0;
+  padding: 0;
+  word-spacing: 2.5px;
 }
 h4 {
-    font-family: Brush Script MT, Brush Script Std, Arial, Helvetica, sans-serif;
-    font-size: 5vh;
-    font-weight: normal;
-    text-shadow: 1px 2px 2.5px black;
+  font-family: Brush Script MT, Brush Script Std, Arial, Helvetica, sans-serif;
+  font-size: 5vh;
+  font-weight: normal;
+  text-shadow: 1px 2px 2.5px black;
 }
 .header::before {
-    display: block;
-    width: 92.5vw;
-    height: 5vh;
-    content: '';
-    border-radius: 10px;
-    margin: 2.5vh 2.5vw;
-    position: absolute;
-    left: 1.25vw;
-    top: 0;
-    filter:blur(5px);
-    z-index: -1;
-    opacity: 0.80;
+  display: block;
+  width: 92.5vw;
+  height: 5vh;
+  content: '';
+  border-radius: 10px;
+  margin: 2.5vh 2.5vw;
+  position: absolute;
+  left: 1.25vw;
+  top: 0;
+  filter: blur(5px);
+  z-index: -1;
+  opacity: 0.8;
 }
 .header {
-    background: #00000055;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px -1px black;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 5vh;
-    margin: 2.5vh 2.5vw;
-    text-align: center;
+  background: #00000055;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px -1px black;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 5vh;
+  margin: 2.5vh 2.5vw;
+  text-align: center;
 }
 .header:active {
-    box-shadow: inset 0px 5px 10px -2px black;
-    transform: scale(0.975);
+  box-shadow: inset 0px 5px 10px -2px black;
+  transform: scale(0.975);
 }
 .container-glass {
-    content: '';
-    border-radius: 20px;
-    margin: 0 10vw 20vh;
-    position: absolute;
-    top: 10vh;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    filter:blur(5px);
-    z-index: -1;
-    opacity: 0.80;
+  content: '';
+  border-radius: 20px;
+  margin: 0 10vw 20vh;
+  position: absolute;
+  top: 10vh;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: blur(5px);
+  z-index: -1;
+  opacity: 0.8;
 }
 .container-div {
-    background-color: #00000055;
-    border-radius: 20px;
-    box-shadow: 2px 5px 10px -2px black;
-    display: flex;
-    flex-direction: row;
-    height: 70vh;
-    justify-content: center;
-    margin: 0 auto;
-    width: 80vw;
+  background-color: #00000055;
+  border-radius: 20px;
+  box-shadow: 2px 5px 10px -2px black;
+  display: flex;
+  flex-direction: row;
+  height: 70vh;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80vw;
 }
 .display-div {
-    align-items: center;
-    cursor: default;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 2.5vh 2.5vh 2.5vh 0;
-    text-align: center;
-    width: 100%;
+  align-items: center;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2.5vh 2.5vh 2.5vh 0;
+  text-align: center;
+  width: 100%;
 }
 .display-time {
-    align-items: center;
-    background-color: #00000055;
-    border-radius: 10px;
-    box-shadow: inset 0 3px 10px -3px black;
-    display: flex;
-    flex: 3;
-    margin: 0 0 2.5vh 0;
-    justify-content: center;
-    width: 100%;
+  align-items: center;
+  background-color: #00000055;
+  border-radius: 10px;
+  box-shadow: inset 0 3px 10px -3px black;
+  display: flex;
+  flex: 3;
+  margin: 0 0 2.5vh 0;
+  justify-content: center;
+  width: 100%;
 }
 .display-other {
-    align-items: center;
-    background-color: #00000055;
-    border-radius: 10px;
-    box-shadow: inset 0 3px 10px -3px black;
-    display: flex;
-    flex: 2;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
+  align-items: center;
+  background-color: #00000055;
+  border-radius: 10px;
+  box-shadow: inset 0 3px 10px -3px black;
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 .control-div {
-    display: flex;
-    flex-direction: column;
-    padding: 2.5vh;  
-    width: 15vw;    
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 15vw;
 }
 .form-div {
-    display: flex;
-    flex: 30%;
-    flex-direction: column;
+  display: flex;
+  flex: 30%;
+  flex-direction: column;
 }
 .button-div {
-    display: flex;
-    flex: 70%;
-    flex-direction: column;
-    flex-wrap: wrap;
+  display: flex;
+  flex: 70%;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 .timer-presets,
 .alarm-presets {
-    display: grid;
-    flex: 1;
-    flex-direction: column;
-    grid-template-columns: repeat(auto-fill,minmax(6.5vw, 1fr));
-    padding: 2.5vh 0 0 0;
+  display: grid;
+  flex: 1;
+  flex-direction: column;
+  grid-template-columns: repeat(auto-fill, minmax(6.5vw, 1fr));
+  padding: 1rem 0 0 0;
 }
 .input {
-    border-radius: 10px 10px 0 0;
-    box-shadow: inset 0 3px 10px -3px black;
-    flex: 1;
-    outline: none;
-    padding: 0 10px;
-    text-align: center;
+  border-radius: 10px 10px 0 0;
+  box-shadow: inset 0 3px 10px -3px black;
+  flex: 1;
+  outline: none;
+  padding: 0 1rem;
+  text-align: center;
 }
 .submit {
-    border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
 }
 .button {
-    background-image: linear-gradient(to bottom, #ffffff, #d0d0d0);
-    box-shadow: 1px 2px 5px -1px black;
-    cursor: pointer;
-    flex: 1;
-    outline: none;
+  background-image: linear-gradient(to bottom, #ffffff, #d0d0d0);
+  box-shadow: 1px 2px 5px -1px black;
+  cursor: pointer;
+  flex: 1;
+  outline: none;
 }
 .button:hover {
-    background-image: linear-gradient(to bottom, #d0d0d0, #ffffff);
+  background-image: linear-gradient(to bottom, #d0d0d0, #ffffff);
 }
 .stop-button {
-    background-image: linear-gradient(to bottom, #444444, #222222);
-    color: #ffffff;
+  background-image: linear-gradient(to bottom, #444444, #222222);
+  color: #ffffff;
 }
 .stop-button:hover {
-    background-image: linear-gradient(to bottom, #222222, #444444);
-    color: #ffffff;
+  background-image: linear-gradient(to bottom, #222222, #444444);
+  color: #ffffff;
 }
 .mute-glass {
-    content: '';
-    border-radius: 10px 10px 0 0;
-    margin: 88.75vh 0 0 92vw;
-    position: absolute;
-    top: 0;
-    right: 2.5vw;
-    bottom: 0;
-    left: 0;
-    filter:blur(5px);
-    width: 5.5vw;
-    z-index: -1;
-    opacity: 0.80;
+  content: '';
+  border-radius: 10px 10px 0 0;
+  margin: 88.75vh 0 0 92vw;
+  position: absolute;
+  top: 0;
+  right: 2.5vw;
+  bottom: 0;
+  left: 0;
+  filter: blur(5px);
+  width: 5.5vw;
+  z-index: -1;
+  opacity: 0.8;
 }
 .mute-div {
-    position: absolute;
-    right: 2.5vw;
-    bottom: 0px;
-    background-color: #00000055;
-    border-radius: 15px 15px 0 0;
-    box-shadow: 2px 5px 10px -2px black;
-    height: 10vh;
-    margin: 0;
-    padding: 0.75vh 0.75vw;
-    width: 4vw;
+  position: absolute;
+  right: 2.5vw;
+  bottom: 0.5rem;
+  background-color: #00000055;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 2px 5px 10px -2px black;
+  height: 10vh;
+  margin: 0;
+  padding: 0.25rem;
+  width: 4vw;
 }
 .mute {
-    border-radius: 10px;
-    margin: 1vh 1vw 0 0;
-    height: 8vh;
-    width: 4vw;
-    box-shadow: 1px 2px 5px -1px black;
-    cursor: pointer;
-    outline: none;
+  border-radius: 10px;
+  margin: 1vh 1vw 0 0;
+  height: 8vh;
+  width: 4vw;
+  box-shadow: 1px 2px 5px -1px black;
+  cursor: pointer;
+  outline: none;
 }
 .mute-icon {
-    background-image:url("images/Mute_Icon.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 95%;
+  background-image: url('images/Mute_Icon.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 95%;
 }
 .unmute-icon {
-    background-image:url("images/Speaker_Icon.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 95%;
+  background-image: url('images/Speaker_Icon.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 95%;
 }
 .hidden {
-    opacity: 0;
-    transition: opacity 1s;
+  opacity: 0;
+  transition: opacity 1s;
 }
 .visible {
-    opacity: 1;
+  opacity: 1;
 }
 
 @media only screen and (max-width: 767px) {
-  
-  html, button, input {
+  html,
+  button,
+  input {
     font-size: 80%;
   }
 
@@ -254,7 +264,7 @@ h4 {
 
   .timer-presets,
   .alarm-presets {
-    grid-template-columns: repeat(auto-fill,minmax(8.5vw, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(8.5vw, 1fr));
   }
 
   .mute-glass {
@@ -266,14 +276,11 @@ h4 {
     height: 8vh;
     width: 8vw;
   }
-
 }
 
 @media only screen and (min-width: 1150px) {
-
   .timer-presets,
   .alarm-presets {
-    grid-template-columns: repeat(auto-fill,minmax(5vw, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(5vw, 1fr));
   }
-
 }
