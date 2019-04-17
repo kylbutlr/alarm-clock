@@ -1,51 +1,74 @@
 <!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css/style.css"> 
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <title>Alarm & Timer</title>
-    </head>
-    <body>
-        <div class="header"><h4>Alarm & Timer</h4></div>
-        <div class="container-glass"></div>
-        <div class="container-div">
-            <div class="control-div">
-                <div class="form-div">
-                        <input type="textarea" class="input" id="input" placeholder="Mins or @Time" autocomplete="off">
-                        <button class="submit button" id="submit">Start</button>
-                </div>
-                <div class="button-div">
-                    <div class="timer-presets">
-                        <button style="border-radius: 10px 0 0 0" data-time="1" class="preset button">+ 60 sec</button>
-                        <button style="border-radius: 0 10px 0 0" data-time="5" class="preset button">+ 5 min</button>
-                        <button style="border-radius: 0 0 0 10px" data-time="15" class="preset button">+ 15 min</button>
-                        <button style="border-radius: 0 0 10px 0" data-time="60" class="preset button">+ 1 hour</button>
-                    </div>
-                    <div class="alarm-presets">
-                        <button style="border-radius: 10px 0 0 0" data-time="@6" class="preset button">@ 6:00 am</button>
-                        <button style="border-radius: 0 10px 0 0" data-time="@12" class="preset button">@ 12:00 pm</button>
-                        <button style="border-radius: 0 0 0 10px" data-time="@16" class="preset button">@ 4:00 pm</button>
-                        <button style="border-radius: 0 0 10px 0" data-time="@22" class="preset button">@ 10:00 pm</button>
-                    </div>
-                </div>
-            </div>
-            <div class="display-div">
-                <div class="display-time">
-                    <h1 class="time-left"></h1>
-                </div>
-                <div class="display-other">
-                    <h3 class="other-text"></h3>
-                    <h2 class="end-time"></h2>
-                </div>
-            </div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <title>Alarm & Timer</title>
+  </head>
+  <body>
+    <div class="header"><h4>Alarm & Timer</h4></div>
+    <div class="container-glass"></div>
+    <div class="container-div">
+      <div class="control-div">
+        <div class="form-div">
+          <input
+            type="textarea"
+            class="input"
+            id="input"
+            placeholder="Mins or @Time"
+            autocomplete="off"
+          />
+          <button class="submit button" id="submit">Start</button>
         </div>
-        <div class="mute-glass"></div>
-        <div class="mute-div">
-            <button class="mute unmute-icon" id="mute"></button>
+        <div class="button-div">
+          <div class="timer-presets">
+            <button style="border-radius: 10px 0 0 0" data-time="1" class="preset button">
+              + 60 sec
+            </button>
+            <button style="border-radius: 0 10px 0 0" data-time="5" class="preset button">
+              + 5 min
+            </button>
+            <button style="border-radius: 0 0 0 10px" data-time="15" class="preset button">
+              + 15 min
+            </button>
+            <button style="border-radius: 0 0 10px 0" data-time="60" class="preset button">
+              + 1 hour
+            </button>
+          </div>
+          <div class="alarm-presets">
+            <button style="border-radius: 10px 0 0 0" data-time="@6" class="preset button">
+              @ 6:00 am
+            </button>
+            <button style="border-radius: 0 10px 0 0" data-time="@12" class="preset button">
+              @ 12:00 pm
+            </button>
+            <button style="border-radius: 0 0 0 10px" data-time="@16" class="preset button">
+              @ 4:00 pm
+            </button>
+            <button style="border-radius: 0 0 10px 0" data-time="@22" class="preset button">
+              @ 10:00 pm
+            </button>
+          </div>
         </div>
-    </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+      </div>
+      <div class="display-div">
+        <div class="display-time">
+          <h1 class="time-left"></h1>
+        </div>
+        <div class="display-other">
+          <h3 class="other-text"></h3>
+          <h2 class="end-time"></h2>
+        </div>
+      </div>
+    </div>
+    <div class="mute-glass"></div>
+    <div class="mute-div">
+      <button class="mute unmute-icon" id="mute"></button>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/script.js"></script>
 </html>
