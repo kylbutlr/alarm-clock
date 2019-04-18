@@ -1,9 +1,6 @@
 html,
-body,
-.header::before,
-.container-glass,
-.mute-glass {
-  background: url('./images/background.jpg') 0 / cover fixed;
+body {
+  background: url('./images/background.jpg') 0 0 / cover fixed;
 }
 html {
   height: 100vh;
@@ -14,7 +11,7 @@ html {
 html,
 button,
 input {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Helvetica, sans-serif;
   font-size: 0.9rem;
 }
 body {
@@ -28,21 +25,21 @@ body {
   text-shadow: 1px 2px 5px black;
 }
 h1 {
-  font-size: 15vw;
+  font-size: 12rem;
   font-weight: normal;
   letter-spacing: 2.5px;
   margin: 0;
   padding: 0;
 }
 h2 {
-  font-size: 7.5vw;
+  font-size: 6rem;
   font-weight: normal;
   letter-spacing: 2.5px;
   margin: 0;
   padding: 0;
 }
 h3 {
-  font-size: 2.5vw;
+  font-size: 2rem;
   font-weight: normal;
   letter-spacing: 2.5px;
   margin: 0;
@@ -50,24 +47,10 @@ h3 {
   word-spacing: 2.5px;
 }
 h4 {
-  font-family: Brush Script MT, Brush Script Std, Arial, Helvetica, sans-serif;
-  font-size: 5vh;
+  font-family: Brush Script MT, Brush Script Std, 'Roboto', Helvetica, sans-serif;
+  font-size: 2.5rem;
   font-weight: normal;
   text-shadow: 1px 2px 2.5px black;
-}
-.header::before {
-  display: block;
-  width: 92.5vw;
-  height: 5vh;
-  content: '';
-  border-radius: 10px;
-  margin: 2.5vh 2.5vw;
-  position: absolute;
-  left: 1.25vw;
-  top: 0;
-  filter: blur(5px);
-  z-index: -1;
-  opacity: 0.8;
 }
 .header {
   background: #00000055;
@@ -78,26 +61,13 @@ h4 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 5vh;
-  margin: 2.5vh 2.5vw;
+  height: 2.5rem;
+  margin: 1rem;
   text-align: center;
 }
 .header:active {
   box-shadow: inset 0px 5px 10px -2px black;
   transform: scale(0.975);
-}
-.container-glass {
-  content: '';
-  border-radius: 20px;
-  margin: 0 10vw 20vh;
-  position: absolute;
-  top: 10vh;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  filter: blur(5px);
-  z-index: -1;
-  opacity: 0.8;
 }
 .container-div {
   background-color: #00000055;
@@ -116,7 +86,7 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2.5vh 2.5vh 2.5vh 0;
+  margin: 1rem 1rem 1rem 0;
   text-align: center;
   width: 100%;
 }
@@ -127,7 +97,7 @@ h4 {
   box-shadow: inset 0 3px 10px -3px black;
   display: flex;
   flex: 3;
-  margin: 0 0 2.5vh 0;
+  margin: 0 0 1rem 0;
   justify-content: center;
   width: 100%;
 }
@@ -196,20 +166,6 @@ h4 {
   background-image: linear-gradient(to bottom, #222222, #444444);
   color: #ffffff;
 }
-.mute-glass {
-  content: '';
-  border-radius: 10px 10px 0 0;
-  margin: 88.75vh 0 0 92vw;
-  position: absolute;
-  top: 0;
-  right: 2.5vw;
-  bottom: 0;
-  left: 0;
-  filter: blur(5px);
-  width: 5.5vw;
-  z-index: -1;
-  opacity: 0.8;
-}
 .mute-div {
   position: absolute;
   right: 2.5vw;
@@ -217,14 +173,14 @@ h4 {
   background-color: #00000055;
   border-radius: 15px 15px 0 0;
   box-shadow: 2px 5px 10px -2px black;
-  height: 10vh;
+  height: 8vh;
   margin: 0;
   padding: 0.25rem;
   width: 4vw;
 }
 .mute {
   border-radius: 10px;
-  margin: 1vh 1vw 0 0;
+  margin: 0.25rem 0 0;
   height: 8vh;
   width: 4vw;
   box-shadow: 1px 2px 5px -1px black;
@@ -265,10 +221,6 @@ h4 {
   .timer-presets,
   .alarm-presets {
     grid-template-columns: repeat(auto-fill, minmax(8.5vw, 1fr));
-  }
-
-  .mute-glass {
-    width: 9.5vw;
   }
 
   .mute,

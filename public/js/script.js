@@ -494,27 +494,20 @@ $buttons.forEach(button => button.addEventListener('click', buttonAdd));
 $(function() {
   /*
   $(".container-div").hide().delay(500).slideToggle(1000);
-  $(".container-glass").hide().delay(500).slideToggle(1000);
   $(".display-time").hide().delay(500).slideToggle(1000);
   $(".display-other").hide().delay(500).slideToggle(1000);
   $(".mute-div").hide().delay(500).slideToggle(1000);
-  $(".mute-glass").hide().delay(1000).fadeToggle(500);
   $(".form-div").hide().delay(500).slideToggle(1000);
   $(".timer-presets").hide().delay(500).slideToggle(1000);
   $(".alarm-presets").hide().delay(500).slideToggle(1000);
   */
   $('.header').click(function() {
     $('.container-div').slideToggle(1000);
-    $('.container-glass').slideToggle(1000);
     $('.form-div').slideToggle(1000);
     $('.timer-presets').slideToggle(1000);
     $('.alarm-presets').slideToggle(1000);
     $('.display-time').slideToggle(1000);
     $('.display-other').slideToggle(1000);
     $('.mute-div').slideToggle(1000);
-    $('.mute-glass')
-      .stop()
-      .delay(500)
-      .fadeToggle(500);
   });
 });
