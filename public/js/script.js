@@ -217,7 +217,7 @@ function checkRunning() {
       .click(function() {
         clearInterval(countdown);
         running = false;
-        document.title = 'Alarm / Timer';
+        document.title = 'Alarm & Timer';
         $display.textContent = '';
         $end.textContent = '';
         $other.textContent = '';

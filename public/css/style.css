@@ -1,6 +1,7 @@
 html,
 body {
-  background: url('./images/background.jpg') 0 0 / cover fixed;  
+  /*background: url('./images/background.jpg') 0 0 / cover fixed;*/
+  background: url('./images/background.webp') 0 0 / cover fixed;  
 }
 html {
   height: 100vh;
