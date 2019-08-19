@@ -1,13 +1,20 @@
 let countdown;
 let running = false;
 let mute = false;
+let clock = true;
+
+const $body = document.getElementById('body');
 const $display = document.querySelector('.time-left');
 const $end = document.querySelector('.end-time');
 const $other = document.querySelector('.other-text');
 const $input = document.querySelector('.input');
 const $submit = document.querySelector('.submit');
 const $buttons = document.querySelectorAll('[data-time]');
+const $bg = document.getElementById('bg');
 const $mute = document.getElementById('mute');
+
+const preloadingBg2 = new Image();
+preloadingBg2.src = './css/images/background2.webp';
 
 function timer(sec) {
   const now = Date.now();
@@ -234,7 +241,23 @@ function checkRunning() {
   }
 }
 
-function onMuteClick(e) {
+function onBGClick() {
+  if (clock === true) {
+    clock = false;
+    $body.classList.remove('bg2');
+    $body.classList.add('bg1');
+    $bg.classList.remove('mountain-icon');
+    $bg.classList.add('clock-icon');
+  } else {
+    clock = true;
+    $body.classList.remove('bg1');
+    $body.classList.add('bg2');
+    $bg.classList.remove('clock-icon');
+    $bg.classList.add('mountain-icon');
+  }
+}
+
+function onMuteClick() {
   if (mute === true) {
     mute = false;
     $mute.classList.remove('mute-icon');
@@ -488,6 +511,7 @@ function runResize() {
 runResize();
 checkRunning();
 $input.focus();
+$bg.addEventListener('click', onBGClick);
 $mute.addEventListener('click', onMuteClick);
 $buttons.forEach(button => button.addEventListener('click', buttonAdd));
 

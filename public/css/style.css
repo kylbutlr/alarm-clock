@@ -1,7 +1,8 @@
-html,
-body {
-  /*background: url('./images/background.jpg') 0 0 / cover fixed;*/
-  background: url('./images/background.webp') 0 0 / cover fixed;  
+.bg1 {
+  background: url('./images/background2.webp') 0 20% / cover fixed;
+}
+.bg2 {
+  background: url('./images/background.webp') 0 35% / 170% fixed;
 }
 html {
   height: 100vh;
@@ -166,6 +167,39 @@ h4 {
 .stop-button:hover {
   background-image: linear-gradient(to bottom, #222222, #444444);
   color: #ffffff;
+}
+.bg-div {
+  position: absolute;
+  left: 2.5vw;
+  bottom: 0.5rem;
+  background-color: #00000055;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 2px 5px 10px -2px black;
+  height: 8vh;
+  margin: 0;
+  padding: 0.25rem;
+  width: 4vw;
+}
+.bg {
+  border-radius: 10px;
+  margin: 0.25rem 0 0;
+  height: 8vh;
+  width: 4vw;
+  box-shadow: 1px 2px 5px -1px black;
+  cursor: pointer;
+  outline: none;
+}
+.mountain-icon {
+  background-image: url('images/Mountain_Icon.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90%;
+}
+.clock-icon {
+  background-image: url('images/Clock_Icon.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90%;
 }
 .mute-div {
   position: absolute;
