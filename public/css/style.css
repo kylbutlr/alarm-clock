@@ -201,6 +201,15 @@ h4 {
   background-repeat: no-repeat;
   background-size: 90%;
 }
+.bg,
+.mute {
+  opacity: 0.5;
+  transition: opacity 0.5s;
+}
+.bg:hover,
+.mute:hover {
+  opacity: 0.9;
+}
 .mute-div {
   position: absolute;
   right: 2.5vw;
