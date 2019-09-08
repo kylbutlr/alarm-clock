@@ -1,6 +1,6 @@
 .bg1 {
   /*background: url('./images/background2.png') 0 20% / cover fixed;*/
-  background-image: url('./images/background2.png');
+  background-image: url('./images/background2.webp'), url('./images/background2.png');
   background-position-x: 0;
   background-position-y: 20%;
   background-size: cover;
@@ -8,7 +8,7 @@
 }
 .bg2 {
   /*background: url('./images/background.png') 0 35% / 170% fixed;*/
-  background-image: url('./images/background.png');
+  background-image: url('./images/background.webp') url('./images/background.png');
   background-position-x: 0;
   background-position-y: 35%;
   background-size: 170%;
