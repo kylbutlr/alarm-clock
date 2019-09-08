@@ -1,8 +1,8 @@
 .bg1 {
-  background: url('./images/background2.webp') 0 20% / cover fixed;
+  background: url('./images/background2.webp'), url('./images/background2.png') 0 20% / cover fixed;
 }
 .bg2 {
-  background: url('./images/background.webp') 0 35% / 170% fixed;
+  background: url('./images/background.webp'), url('./images/background.png') 0 35% / 170% fixed;
 }
 html {
   height: 100vh;
